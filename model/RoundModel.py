@@ -12,11 +12,14 @@ _tournament_table = _db.table("tournament_table")
 
 class RoundModel:
 
-    def __init__(self):
-        self.match_list = None
-        self.name = None
-        self.starting_date = None
-        self.end_date = None
+    def __init__(self, match_list=None, name=None, starting_date=None, end_date=None):
+        if match_list is None:
+            self.match_list = []
+        self.match_list = match_list
+        self.name = name
+        self.starting_date = starting_date
+        if end_date is None:
+            self.end_date = end_date
 
     def generate_round(self, player_list, round_name):
         self.name = round_name
@@ -37,9 +40,9 @@ class RoundModel:
     def serialize(self):
         return{
             "name": self.name,
-            "match list": self.match_list,
-            "starting date ": self.starting_date,
-            "end date": self.end_date
+            "match_list": self.match_list,
+            "starting_date": self.starting_date,
+            "end_date": self.end_date
         }
 
     def other_round(self):
@@ -49,3 +52,6 @@ class RoundModel:
     def actual_date():
         date = datetime.datetime.now().strftime("%d/%m/%Y")
         return date
+
+    def set_player_score(self):
+        pass
