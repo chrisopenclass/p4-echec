@@ -152,14 +152,3 @@ class TournamentController:
                     print(player[1])
         else:
             print("marche pas")
-
-"""for y in x:
-                test = y.get("end_date")
-                if not test:
-                    testing = y.get("match_list")
-                    for w in testing:
-                        for g in w:
-                            for p in g:
-                                print(p)"""
-
-
