@@ -146,8 +146,10 @@ class TournamentController:
         list_of_round = self.tournament.get("round_list")
         actual_round = RoundModel().select_actual_round(list_of_round)
         if actual_round:
-            player_list = actual_round.get("match_list")
-            print(player_list)
+            match_list = actual_round.get("match_list")
+            for match in match_list:
+                for player in match:
+                    print(player[1])
         else:
             print("marche pas")
 
