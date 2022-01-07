@@ -118,6 +118,7 @@ class TournamentController:
                 break
             elif user_choice == 2:
                 self.set_player_score()
+                break
             elif user_choice == 3:
                 break
             else:
@@ -142,9 +143,21 @@ class TournamentController:
             ErrorMessage.all_round_generated()
 
     def set_player_score(self):
-        round = self.tournament.get("round_list")
-        for x in round:
-            for y in x:
+        list_of_round = self.tournament.get("round_list")
+        actual_round = RoundModel().select_actual_round(list_of_round)
+        if actual_round:
+            player_list = actual_round.get("match_list")
+            print(player_list)
+        else:
+            print("marche pas")
+
+"""for y in x:
                 test = y.get("end_date")
-                print(test)
-                break
+                if not test:
+                    testing = y.get("match_list")
+                    for w in testing:
+                        for g in w:
+                            for p in g:
+                                print(p)"""
+
+

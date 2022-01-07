@@ -53,5 +53,11 @@ class RoundModel:
         date = datetime.datetime.now().strftime("%d/%m/%Y")
         return date
 
-    def set_player_score(self):
-        pass
+    @staticmethod
+    def select_actual_round(list_of_round):
+        for find_round in list_of_round:
+            for actual_round in find_round:
+                if not actual_round.get("end_date"):
+                    return actual_round
+                elif actual_round:
+                    return False
