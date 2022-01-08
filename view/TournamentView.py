@@ -46,4 +46,7 @@ class TournamentView:
         print("type 2 to enter the player score for the round")
         print("type 3 to go back")
 
-
+    @staticmethod
+    def set_player_score_view(player):
+        print("please enter the score for :")
+        print(player)

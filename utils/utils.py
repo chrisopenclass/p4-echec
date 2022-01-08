@@ -10,6 +10,7 @@ class InputUtils:
         self.check_number_patern = r"^[0-9]+$"
         self.message = ErrorMessage()
         self.check_sex_patern = r"[m/f/M/F]+$"
+        self.check_score_patern = r"[0-1\0.5]+$"
         self.check_date_patern = r"^(?:0[1-9]|1[0-9]|2[0-9]|3[01])\/(?:0[1-9]|1[12])\/(?:19[2-9]\d|[2-9]\d{3})$"
 
     def check_numbers(self):
@@ -88,6 +89,22 @@ class InputUtils:
             try:
                 if not len(self.word):
                     self.message.is_empty()
+                else:
+                    return self.word
+            except ValueError:
+                self.message.generic_error()
+
+    def check_player_score(self):
+        while True:
+            self.word = input("").replace(" ", "")
+            try:
+                testing = re.match(self.check_score_patern, self.word)
+                if not testing:
+                    self.message.score_error()
+                elif len(self.word) < 1:
+                    self.message.is_empty()
+                elif len(self.word) > 3:
+                    self.message.score_len_error()
                 else:
                     return self.word
             except ValueError:

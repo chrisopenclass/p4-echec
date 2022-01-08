@@ -53,7 +53,7 @@ class ErrorMessage:
 
     @staticmethod
     def is_empty():
-        print ("this field can't be empty please enter at least one character")
+        print("this field can't be empty please enter at least one character")
 
     @staticmethod
     def player_score_not_set():
@@ -63,3 +63,11 @@ class ErrorMessage:
     def all_round_generated():
         print("all round as been generated please enter the score for the last round to complete"
               "the tournament")
+
+    @staticmethod
+    def score_error():
+        print("this field can only contain 1 or 0.5 or 0")
+
+    @staticmethod
+    def score_len_error():
+        print("this field can have more than 3 character")

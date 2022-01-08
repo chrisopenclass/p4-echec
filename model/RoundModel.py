@@ -3,7 +3,8 @@ from model.PlayerModel import Player
 # python module importation
 import datetime
 from tinydb import *
-from view.error import ErrorMessage
+from view.TournamentView import TournamentView
+from utils.utils import InputUtils
 from tinydb import Query
 
 _db = TinyDB('db.json', sort_keys=True, indent=4)
@@ -61,3 +62,11 @@ class RoundModel:
                     return actual_round
                 elif actual_round:
                     return False
+
+    @staticmethod
+    def set_player_score(match):
+        for player in match:
+            TournamentView().set_player_score_view(player[0])
+            player[1] = InputUtils().check_player_score()
+
+

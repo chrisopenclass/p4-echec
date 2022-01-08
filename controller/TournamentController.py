@@ -148,7 +148,8 @@ class TournamentController:
         if actual_round:
             match_list = actual_round.get("match_list")
             for match in match_list:
-                for player in match:
-                    print(player[1])
+                RoundModel().set_player_score(match)
+            end_date = list_of_round.get("end_date")
+            TournamentModel.update_to_db(self.tournament, self.tournament_id)
         else:
             print("marche pas")
