@@ -133,8 +133,7 @@ class TournamentController:
                 self.tournament.get("round_list").append(self.round)
                 TournamentModel.update_to_db(self.tournament, self.tournament_id)
             elif self.tournament.get("round_list"):
-                i = len(self.tournament.get("round_list")) + 1
-                print(i)
+                round_name = len(self.tournament.get("round_list")) + 1
                 test = self.tournament.get("round_list")
             else:
                 ErrorMessage.player_score_not_set()
@@ -152,4 +151,4 @@ class TournamentController:
             actual_round.update({"end_date": date})
             TournamentModel.update_to_db(self.tournament, self.tournament_id)
         else:
-            print("marche pas")
+            ErrorMessage().round_not_generated()

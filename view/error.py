@@ -71,3 +71,7 @@ class ErrorMessage:
     @staticmethod
     def score_len_error():
         print("this field can have more than 3 character")
+
+    @staticmethod
+    def round_not_generated():
+        print("you need to generate tournament first")
