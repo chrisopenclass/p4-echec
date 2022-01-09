@@ -51,8 +51,7 @@ class RoundModel:
 
     @staticmethod
     def actual_date():
-        date = datetime.datetime.now().strftime("%d/%m/%Y")
-        return date
+        return datetime.datetime.now().strftime("%d/%m/%Y")
 
     @staticmethod
     def select_actual_round(list_of_round):
@@ -69,4 +68,7 @@ class RoundModel:
             TournamentView().set_player_score_view(player[0])
             player[1] = InputUtils().check_player_score()
 
-
+    def generate_other_round(self):
+        """génération des autre round
+        """
+        pass

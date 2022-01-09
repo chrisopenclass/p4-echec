@@ -118,7 +118,6 @@ class TournamentController:
                 break
             elif user_choice == 2:
                 self.set_player_score()
-                break
             elif user_choice == 3:
                 break
             else:
@@ -149,7 +148,8 @@ class TournamentController:
             match_list = actual_round.get("match_list")
             for match in match_list:
                 RoundModel().set_player_score(match)
-            end_date = list_of_round.get("end_date")
+            date = RoundModel().actual_date()
+            actual_round.update({"end_date": date})
             TournamentModel.update_to_db(self.tournament, self.tournament_id)
         else:
             print("marche pas")
