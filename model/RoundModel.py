@@ -5,7 +5,6 @@ import datetime
 from tinydb import *
 from view.TournamentView import TournamentView
 from utils.utils import InputUtils
-from tinydb import Query
 
 _db = TinyDB('db.json', sort_keys=True, indent=4)
 _tournament_table = _db.table("tournament_table")
@@ -46,9 +45,6 @@ class RoundModel:
             "end_date": self.end_date
         }
 
-    def other_round(self):
-        pass
-
     @staticmethod
     def actual_date():
         return datetime.datetime.now().strftime("%d/%m/%Y")
@@ -67,8 +63,13 @@ class RoundModel:
         for player in match:
             TournamentView().set_player_score_view(player[0])
             player[1] = InputUtils().check_player_score()
+            if not player[0].get("total_score"):
+                player[0].update({"total_score": player[1]})
+            else:
+                player[0].get("player_score")+player[0]
 
     def generate_other_round(self):
         """génération des autre round
+        pour chopper le dernier élément de la liste lent(liste(-1))
         """
         pass

@@ -8,8 +8,10 @@ _tournament_table = _db.table("tournament_table")
 
 class TournamentModel:
 
-    def __init__(self, name=None, location=None, player=None, time=None,
-                 description=None, date=None, round_list=None, finished="false", turn=4):
+    def __init__(
+            self, name=None, location=None, player=None, time=None,
+            description=None, date=None, round_list=None,
+            finished="false", turn=4):
         self.name = name
         self.location = location
         self.player = player

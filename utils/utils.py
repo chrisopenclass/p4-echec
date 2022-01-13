@@ -48,8 +48,6 @@ class InputUtils:
                 testing = re.match(self.check_sex_patern, self.word)
                 if not testing:
                     self.message.error_sex_string()
-                elif not len(self.word) == 1:
-                    self.message.error_lenght()
                 else:
                     return self.word
             except ValueError:
@@ -105,8 +103,14 @@ class InputUtils:
                     self.message.is_empty()
                 elif len(self.word) > 3:
                     self.message.score_len_error()
+                elif self.word == "1":
+                    return 1
+                elif self.word == "0":
+                    return 0
+                elif self.word == "0.5":
+                    return 0.5
                 else:
-                    return self.word
+                    self.message.generic_error()
             except ValueError:
                 self.message.generic_error()
 

@@ -83,7 +83,7 @@
     },
     "tournament_table": {
         "1": {
-            "date": "05/01/2022",
+            "date": "13/01/2022",
             "description": "test",
             "finished": "false",
             "location": "TEST",
@@ -93,6 +93,7 @@
                 2,
                 3,
                 4,
+                4,
                 5,
                 6,
                 7,
@@ -101,7 +102,7 @@
             "round_list": [
                 [
                     {
-                        "end_date": "09/01/2022",
+                        "end_date": "13/01/2022",
                         "match_list": [
                             [
                                 [
@@ -111,20 +112,22 @@
                                         "id": 1,
                                         "name": "XU",
                                         "ranking": 100,
-                                        "sex": "F"
+                                        "sex": "F",
+                                        "total_score": 1
                                     },
-                                    "1"
+                                    1
                                 ],
                                 [
                                     {
-                                        "born_date": "22/09/1996",
-                                        "forename": "CHARLOTTE",
-                                        "id": 5,
-                                        "name": "AUFRAISE",
-                                        "ranking": 40,
-                                        "sex": "F"
+                                        "born_date": "10/12/1985",
+                                        "forename": "RENE",
+                                        "id": 2,
+                                        "name": "LATAUPE",
+                                        "ranking": 50,
+                                        "sex": "M",
+                                        "total_score": 0
                                     },
-                                    "0"
+                                    0
                                 ]
                             ],
                             [
@@ -135,9 +138,36 @@
                                         "id": 4,
                                         "name": "DINOZO",
                                         "ranking": 70,
-                                        "sex": "M"
+                                        "sex": "M",
+                                        "total_score": 0.5
                                     },
-                                    "0.5"
+                                    0.5
+                                ],
+                                [
+                                    {
+                                        "born_date": "22/09/1996",
+                                        "forename": "CHARLOTTE",
+                                        "id": 5,
+                                        "name": "AUFRAISE",
+                                        "ranking": 40,
+                                        "sex": "F",
+                                        "total_score": 0.5
+                                    },
+                                    0.5
+                                ]
+                            ],
+                            [
+                                [
+                                    {
+                                        "born_date": "17/04/1965",
+                                        "forename": "ANTHONY",
+                                        "id": 4,
+                                        "name": "DINOZO",
+                                        "ranking": 70,
+                                        "sex": "M",
+                                        "total_score": 1
+                                    },
+                                    1
                                 ],
                                 [
                                     {
@@ -146,9 +176,10 @@
                                         "id": 3,
                                         "name": "MOORE",
                                         "ranking": 30,
-                                        "sex": "M"
+                                        "sex": "M",
+                                        "total_score": 0
                                     },
-                                    "1"
+                                    0
                                 ]
                             ],
                             [
@@ -159,9 +190,10 @@
                                         "id": 7,
                                         "name": "LEMOINE",
                                         "ranking": 60,
-                                        "sex": "F"
+                                        "sex": "F",
+                                        "total_score": 0
                                     },
-                                    "1"
+                                    0
                                 ],
                                 [
                                     {
@@ -170,42 +202,19 @@
                                         "id": 6,
                                         "name": "INGALS",
                                         "ranking": 20,
-                                        "sex": "F"
+                                        "sex": "F",
+                                        "total_score": 1
                                     },
-                                    "0"
-                                ]
-                            ],
-                            [
-                                [
-                                    {
-                                        "born_date": "10/12/1985",
-                                        "forename": "RENE",
-                                        "id": 2,
-                                        "name": "LATAUPE",
-                                        "ranking": 50,
-                                        "sex": "M"
-                                    },
-                                    "0"
-                                ],
-                                [
-                                    {
-                                        "born_date": "14/02/2001",
-                                        "forename": "JAMES",
-                                        "id": 8,
-                                        "name": "BOND",
-                                        "ranking": 2,
-                                        "sex": "M"
-                                    },
-                                    "0.5"
+                                    1
                                 ]
                             ]
                         ],
                         "name": "round 1",
-                        "starting_date": "05/01/2022"
+                        "starting_date": "13/01/2022"
                     }
                 ]
             ],
-            "time": "bullet",
+            "time": "blitz",
             "turn": 4
         }
     }
