@@ -68,8 +68,31 @@ class RoundModel:
             else:
                 player[0].get("player_score")+player[0]
 
-    def generate_other_round(self):
-        """génération des autre round
-        pour chopper le dernier élément de la liste lent(liste(-1))
-        """
-        pass
+    @staticmethod
+    def get_all_player(match):
+        player_list = []
+        for players in match:
+            for player in players:
+                player_list.append(player[0])
+        return player_list
+
+    def generate_other_round(self, player_list, round_name):
+        self.name = round_name
+        list_of_player = []
+        for players in player_list:
+            player = Player.get_player(players)
+            list_of_player.append(player)
+        sorted_player = sorted(list_of_player,key=lambda ele: ele["total_score"], key=lambda ele: ele["ranking"], reverse=True)
+        self.match_list = [
+            ([sorted_player[0], -1], [sorted_player[4], -1]),
+            ([sorted_player[1], -1], [sorted_player[5], -1]),
+            ([sorted_player[2], -1], [sorted_player[6], -1]),
+            ([sorted_player[3], -1], [sorted_player[7], -1])
+            ]
+        self.starting_date = self.actual_date()
+        return self.serialize()
+
+    @staticmethod
+    def get_all_round(list_of_round):
+        for find_round in list_of_round:
+            return find_round[-1]

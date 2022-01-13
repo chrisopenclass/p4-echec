@@ -61,7 +61,7 @@ class TournamentController:
         name = self.utils.check_string()
         self.view.tournament_location()
         location = self.utils.check_string()
-        self.player_list = [1, 2, 3, 4, 4, 5, 6, 7, 8]#self.get_player_list()
+        self.player_list = [1, 2, 3, 4, 5, 6, 7, 8]#self.get_player_list()
         time = self.time_selection()
         description = self.get_tournament_description()
         date = datetime.datetime.now().strftime("%d/%m/%Y")
@@ -115,11 +115,10 @@ class TournamentController:
         while True:
             if user_choice == 1:
                 self.round_generation()
-                break
             elif user_choice == 2:
                 self.set_player_score()
+                break
             elif user_choice == 3:
-                self.test()
                 break
             else:
                 ErrorMessage.generic_error()
@@ -135,7 +134,12 @@ class TournamentController:
                 TournamentModel.update_to_db(self.tournament, self.tournament_id)
             elif self.tournament.get("round_list"):
                 round_name = len(self.tournament.get("round_list")) + 1
-                test = self.tournament.get("round_list")
+                round_list = self.tournament.get("round_list")
+                all_round = RoundModel().get_all_round(round_list)
+                match_list = all_round.get("match_list")
+                player_list = RoundModel().get_all_player(match_list)
+                RoundModel().generate_other_round(round_name, player_list)
+                print(player_list)
             else:
                 ErrorMessage.player_score_not_set()
 
@@ -152,13 +156,5 @@ class TournamentController:
             date = RoundModel().actual_date()
             actual_round.update({"end_date": date})
             TournamentModel.update_to_db(self.tournament, self.tournament_id)
-
         else:
             ErrorMessage().round_not_generated()
-
-    def test(self):
-        list_of_round = self.tournament.get("match_list")
-        for round in list_of_round:
-            truc = round.get("match_list")
-            for match in truc:
-                print(match)
