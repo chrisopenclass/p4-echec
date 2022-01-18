@@ -113,5 +113,3 @@ class InputUtils:
                     self.message.generic_error()
             except ValueError:
                 self.message.generic_error()
-
-
