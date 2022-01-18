@@ -48,5 +48,7 @@ class TournamentView:
 
     @staticmethod
     def set_player_score_view(player):
-        print("please enter the score for :")
-        print(player)
+        name = player.get("name")
+        f_name = player.get("forename")
+        rank = player.get("ranking")
+        print(f"please enter the score for {name} {f_name} rank: {rank}\n")
