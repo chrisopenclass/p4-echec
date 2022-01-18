@@ -26,5 +26,8 @@ class View:
 
     @staticmethod
     def get_menu():
-        print("type 1 to add player")
-        print("type 2 to quit")
+        print("type 1 to add player \n")
+        print("type 2 to list all player sorted by alphabetical order  \n")
+        print("type 3 to list all player sorted by rank order  \n")
+        print("type 4 to edit player rank \n")
+        print("type 5 to quit \n")

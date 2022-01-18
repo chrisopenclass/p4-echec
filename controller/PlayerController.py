@@ -17,6 +17,12 @@ class PlayerController:
             if user_entry == 1:
                 self.player_creation()
             elif user_entry == 2:
+                pass
+            elif user_entry == 3:
+                pass
+            elif user_entry == 4:
+                pass
+            elif user_entry == 5:
                 break
             else:
                 self.message.error_menu()
