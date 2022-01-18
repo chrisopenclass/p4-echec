@@ -90,34 +90,34 @@ class RoundModel:
             list_of_player.append(players)
         sorted_player = sorted(list_of_player, key=lambda ele: (ele["total_score"], ele["ranking"]), reverse=True)
         if not sorted_player[4].get("id") in sorted_player[0].get("opponent_history"):
-            sorted_player[0].get("opponent_history").append(sorted_player[4].get("id"))
-            sorted_player[4].get("opponent_history").append(sorted_player[0].get("id"))
-            sorted_player[1].get("opponent_history").append(sorted_player[5].get("id"))
-            sorted_player[5].get("opponent_history").append(sorted_player[1].get("id"))
-            sorted_player[2].get("opponent_history").append(sorted_player[6].get("id"))
-            sorted_player[6].get("opponent_history").append(sorted_player[2].get("id"))
-            sorted_player[3].get("opponent_history").append(sorted_player[7].get("id"))
-            sorted_player[7].get("opponent_history").append(sorted_player[3].get("id"))
+            sorted_player[0].get("opponent_history").append(sorted_player[1].get("id"))
+            sorted_player[1].get("opponent_history").append(sorted_player[0].get("id"))
+            sorted_player[2].get("opponent_history").append(sorted_player[3].get("id"))
+            sorted_player[3].get("opponent_history").append(sorted_player[2].get("id"))
+            sorted_player[4].get("opponent_history").append(sorted_player[5].get("id"))
+            sorted_player[5].get("opponent_history").append(sorted_player[4].get("id"))
+            sorted_player[6].get("opponent_history").append(sorted_player[7].get("id"))
+            sorted_player[7].get("opponent_history").append(sorted_player[6].get("id"))
             self.match_list = [
-                ([sorted_player[0], -1], [sorted_player[4], -1]),
-                ([sorted_player[1], -1], [sorted_player[5], -1]),
-                ([sorted_player[2], -1], [sorted_player[6], -1]),
-                ([sorted_player[3], -1], [sorted_player[7], -1])
+                ([sorted_player[0], -1], [sorted_player[1], -1]),
+                ([sorted_player[2], -1], [sorted_player[3], -1]),
+                ([sorted_player[4], -1], [sorted_player[5], -1]),
+                ([sorted_player[6], -1], [sorted_player[7], -1])
                 ]
         else:
-            sorted_player[0].get("opponent_history").append(sorted_player[5].get("id"))
-            sorted_player[5].get("opponent_history").append(sorted_player[0].get("id"))
-            sorted_player[1].get("opponent_history").append(sorted_player[4].get("id"))
-            sorted_player[4].get("opponent_history").append(sorted_player[1].get("id"))
-            sorted_player[2].get("opponent_history").append(sorted_player[6].get("id"))
-            sorted_player[6].get("opponent_history").append(sorted_player[2].get("id"))
-            sorted_player[3].get("opponent_history").append(sorted_player[7].get("id"))
-            sorted_player[7].get("opponent_history").append(sorted_player[3].get("id"))
+            sorted_player[0].get("opponent_history").append(sorted_player[2].get("id"))
+            sorted_player[2].get("opponent_history").append(sorted_player[0].get("id"))
+            sorted_player[1].get("opponent_history").append(sorted_player[3].get("id"))
+            sorted_player[3].get("opponent_history").append(sorted_player[1].get("id"))
+            sorted_player[4].get("opponent_history").append(sorted_player[5].get("id"))
+            sorted_player[5].get("opponent_history").append(sorted_player[4].get("id"))
+            sorted_player[6].get("opponent_history").append(sorted_player[7].get("id"))
+            sorted_player[7].get("opponent_history").append(sorted_player[6].get("id"))
             self.match_list = [
-                ([sorted_player[0], -1], [sorted_player[5], -1]),
-                ([sorted_player[1], -1], [sorted_player[4], -1]),
-                ([sorted_player[2], -1], [sorted_player[6], -1]),
-                ([sorted_player[3], -1], [sorted_player[7], -1])
+                ([sorted_player[0], -1], [sorted_player[2], -1]),
+                ([sorted_player[1], -1], [sorted_player[3], -1]),
+                ([sorted_player[4], -1], [sorted_player[5], -1]),
+                ([sorted_player[6], -1], [sorted_player[7], -1])
             ]
         self.starting_date = self.actual_date()
         return self.serialize()

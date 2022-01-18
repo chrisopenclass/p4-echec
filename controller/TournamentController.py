@@ -156,8 +156,7 @@ class TournamentController:
 
     def set_player_score(self):
         list_of_round = self.tournament.get("round_list")
-        truc = list_of_round[-1]
-        actual_round = truc[-1]
+        actual_round = list_of_round[-1]
         if not actual_round.get("end_date"):
             match_list = actual_round.get("match_list")
             for match in match_list:
