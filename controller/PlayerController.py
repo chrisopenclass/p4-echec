@@ -17,9 +17,13 @@ class PlayerController:
             if user_entry == 1:
                 self.player_creation()
             elif user_entry == 2:
-                pass
+                list_of_player = Player.get_all_player()
+                sorted_player = sorted(list_of_player, key=lambda ele: ele["ranking"], reverse=True)
+                View.print_player(sorted_player)
             elif user_entry == 3:
-                pass
+                list_of_player = Player.get_all_player()
+                sorted_player = sorted(list_of_player, key=lambda ele: ele["name"])
+                View.print_player(sorted_player)
             elif user_entry == 4:
                 pass
             elif user_entry == 5:

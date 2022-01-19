@@ -63,3 +63,7 @@ class Player:
     def get_player(player_id):
         player = _player_table.get(doc_id=int(player_id))
         return player
+
+    @staticmethod
+    def get_all_player():
+        return _player_table.all()

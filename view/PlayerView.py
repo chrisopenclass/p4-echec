@@ -31,3 +31,9 @@ class View:
         print("type 3 to list all player sorted by rank order  \n")
         print("type 4 to edit player rank \n")
         print("type 5 to quit \n")
+
+    @staticmethod
+    def print_player(sorted_player):
+        for player in sorted_player:
+            print(f"{player.get('name')} {player.get('forename')} rank: {player.get('ranking')} \n")
+
