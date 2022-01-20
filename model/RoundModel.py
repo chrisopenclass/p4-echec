@@ -71,7 +71,6 @@ class RoundModel:
                 actual_score = player[0].get("total_score")
                 print(actual_score)
                 round_score = player[1]
-                print(type(round_score))
                 total_score = actual_score + round_score
                 player[0].update({"total_score": total_score})
 
@@ -124,5 +123,4 @@ class RoundModel:
 
     @staticmethod
     def get_all_round(list_of_round):
-        for find_round in list_of_round:
-            return find_round[-1]
+        return list_of_round[-1]

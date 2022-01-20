@@ -61,7 +61,7 @@ class TournamentController:
         name = self.utils.check_string()
         self.view.tournament_location()
         location = self.utils.check_string()
-        self.player_list = self.get_player_list()
+        self.player_list = [1,2,3,4,5,6,7,8,]#self.get_player_list()
         time = self.time_selection()
         description = self.get_tournament_description()
         date = datetime.datetime.now().strftime("%d/%m/%Y")
@@ -117,9 +117,9 @@ class TournamentController:
         TournamentView.print_tournament(tournaments)
 
     def round_menu(self):
-        TournamentView.round_menu_view()
-        user_choice = InputUtils().check_numbers()
         while True:
+            TournamentView.round_menu_view()
+            user_choice = InputUtils().check_numbers()
             if user_choice == 1:
                 self.round_generation()
             elif user_choice == 2:
@@ -130,36 +130,31 @@ class TournamentController:
                 ErrorMessage.generic_error()
 
     def round_generation(self):
-        custom_break = 0
-        while custom_break < 1:
-            if len(self.tournament.get("round_list")) < 4:
-                i = 1
-                if not self.tournament.get("round_list"):
+        if len(self.tournament.get("round_list")) < 4:
+            i = 1
+            if not self.tournament.get("round_list"):
+                round_name = f"round {i}"
+                self.player_list = self.tournament.get("player")
+                round = RoundModel().generate_round(self.player_list, round_name)
+                self.round.append(round)
+                self.tournament.get("round_list").append(round)
+                TournamentModel.update_to_db(self.tournament, self.tournament_id)
+            elif self.tournament.get("round_list"):
+                round_list = self.tournament.get("round_list")
+                last_round = round_list[-1]
+                if last_round.get("end_date"):
+                    i = len(self.tournament.get("round_list")) + 1
                     round_name = f"round {i}"
-                    self.player_list = self.tournament.get("player")
-                    self.round.append(RoundModel().generate_round(self.player_list, round_name))
-                    self.tournament.get("round_list").append(self.round)
+                    all_round = RoundModel().get_all_round(round_list)
+                    match_list = all_round.get("match_list")
+                    player_list = RoundModel().get_all_player(match_list)
+                    new_round = RoundModel().generate_other_round(player_list, round_name)
+                    round_list.append(new_round)
                     TournamentModel.update_to_db(self.tournament, self.tournament_id)
-                    break
-                elif self.tournament.get("round_list"):
-                    round_list = self.tournament.get("round_list")
-                    last_round = round_list[-1]
-                    if last_round.get("end_date"):
-                        i = len(self.tournament.get("round_list")) + 1
-                        round_name = f"round {i}"
-                        all_round = RoundModel().get_all_round(round_list)
-                        match_list = all_round.get("match_list")
-                        player_list = RoundModel().get_all_player(match_list)
-                        new_round = RoundModel().generate_other_round(player_list, round_name)
-                        round_list.append(new_round)
-                        TournamentModel.update_to_db(self.tournament, self.tournament_id)
-                        break
-                    else:
-                        ErrorMessage.player_score_not_set()
-                        custom_break += 1
-            else:
-                ErrorMessage.all_round_generated()
-                break
+                else:
+                    ErrorMessage.player_score_not_set()
+        else:
+            ErrorMessage.all_round_generated()
 
     def set_player_score(self):
         list_of_round = self.tournament.get("round_list")
