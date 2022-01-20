@@ -1,0 +1,9 @@
+
+flake8_report/back.svg
+flake8_report/file.svg
+flake8_report/index.html
+flake8_report/model.PlayerModel.report.html
+flake8_report/model.PlayerModel.source.html
+flake8_report/model.RoundModel.report.html
+flake8_report/model.RoundModel.source.html
+flake8_report/styles.css
