@@ -79,6 +79,3 @@ class PlayerController:
                     return player_exist
             except ValueError:
                 self.message.generic_error()
-
-
-

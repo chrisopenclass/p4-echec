@@ -67,4 +67,3 @@ class TournamentView:
                 print("this tournament is not finished yet\n")
             input("press any key to continue\n")
         print("all tournament as been printed")
-

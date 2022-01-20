@@ -1,4 +1,4 @@
-from tinydb import *
+from tinydb import TinyDB, Query
 from view.error import ErrorMessage
 
 _db = TinyDB('db.json', sort_keys=True, indent=4)
@@ -44,7 +44,7 @@ class Player:
         player = Query()
         try:
             search_result = _player_table.get((player.name == self.f_name) & (player.forename == self.l_name)
-                                             & (player.born_date == self.b_date))
+                                              & (player.born_date == self.b_date))
             if not search_result:
                 return False
             else:

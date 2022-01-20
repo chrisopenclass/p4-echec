@@ -1,6 +1,6 @@
-from tinydb import TinyDB
+from tinydb import TinyDB, Query
 from view.error import ErrorMessage
-from tinydb import Query
+
 
 _db = TinyDB('db.json', sort_keys=True, indent=4)
 _tournament_table = _db.table("tournament_table")
@@ -70,4 +70,3 @@ class TournamentModel:
     @staticmethod
     def extract_all_tournament():
         return _tournament_table.all()
-

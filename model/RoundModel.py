@@ -2,7 +2,7 @@
 from model.PlayerModel import Player
 # python module importation
 import datetime
-from tinydb import *
+from tinydb import TinyDB
 from view.TournamentView import TournamentView
 from utils.utils import InputUtils
 

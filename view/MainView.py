@@ -7,5 +7,3 @@ class MainView:
               "type 1 to access to tournament menu \n"
               "type 2 to access to player menu \n"
               "type 3 to quit \n")
-
-
