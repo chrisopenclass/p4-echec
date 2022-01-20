@@ -61,7 +61,7 @@ class TournamentController:
         name = self.utils.check_string()
         self.view.tournament_location()
         location = self.utils.check_string()
-        self.player_list = [1,2,3,4,5,6,7,8,]#self.get_player_list()
+        self.player_list = self.get_player_list()
         time = self.time_selection()
         description = self.get_tournament_description()
         date = datetime.datetime.now().strftime("%d/%m/%Y")
