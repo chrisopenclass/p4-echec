@@ -2,10 +2,11 @@ class TournamentView:
 
     @staticmethod
     def main_menu():
-        print("what did you want to do ? ")
-        print("type 1 to create a new tournament")
-        print("type 2 to restore unfinished tournament")
-        print("type 3 to quit")
+        print("what did you want to do ? \n")
+        print("type 1 to create a new tournament \n")
+        print("type 2 to restore unfinished tournament \n")
+        print("type 3 to list all tournament \n")
+        print("type 4 to quit\n")
 
     @staticmethod
     def tournament_name():
@@ -52,3 +53,18 @@ class TournamentView:
         f_name = player.get("forename")
         rank = player.get("ranking")
         print(f"please enter the score for {name} {f_name} rank: {rank}\n")
+
+    @staticmethod
+    def print_tournament(tournaments):
+        for tournament in tournaments:
+            print(f"tournament name :{tournament.get('name')} \n")
+            print(f"tournament description :{tournament.get('description')}\n")
+            print(f"tournament location :{tournament.get('location')}\n")
+            print(f"tournament date :{tournament.get('date')}\n")
+            if tournament.get("status"):
+                print("the tournament is finished \n")
+            else:
+                print("this tournament is not finished yet\n")
+            input("press any key to continue\n")
+        print("all tournament as been printed")
+

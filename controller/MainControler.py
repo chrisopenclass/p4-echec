@@ -22,7 +22,7 @@ class MainControler:
             elif user_entry == 2:
                 run = PlayerController()
                 run.main_controller()
-            elif user_entry == 5:
+            elif user_entry == 3:
                 quit()
             else:
                 self.message.error_menu()

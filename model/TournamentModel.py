@@ -67,3 +67,7 @@ class TournamentModel:
     def update_to_db(tournament, tournament_id):
         _tournament_table.update(tournament, doc_ids=[tournament_id])
 
+    @staticmethod
+    def extract_all_tournament():
+        return _tournament_table.all()
+

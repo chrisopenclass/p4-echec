@@ -61,7 +61,7 @@ class TournamentController:
         name = self.utils.check_string()
         self.view.tournament_location()
         location = self.utils.check_string()
-        self.player_list = [1, 2, 3, 4, 5, 6, 7, 8]#self.get_player_list()
+        self.player_list = self.get_player_list()
         time = self.time_selection()
         description = self.get_tournament_description()
         date = datetime.datetime.now().strftime("%d/%m/%Y")
@@ -105,9 +105,16 @@ class TournamentController:
             elif user_entry == 2:
                 self.tournament_restoration()
             elif user_entry == 3:
+                self.print_all_tournament()
+            elif user_entry == 4:
                 break
             else:
                 self.message.error_menu()
+
+    @staticmethod
+    def print_all_tournament():
+        tournaments = TournamentModel.extract_all_tournament()
+        TournamentView.print_tournament(tournaments)
 
     def round_menu(self):
         TournamentView.round_menu_view()
