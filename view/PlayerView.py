@@ -37,3 +37,10 @@ class View:
         for player in sorted_player:
             print(f"{player.get('name')} {player.get('forename')} rank: {player.get('ranking')} \n")
 
+    @staticmethod
+    def new_player_rank():
+        print("please enter the new player rank :")
+
+    @staticmethod
+    def new_rank_set():
+        print("player rank correctly edited ")

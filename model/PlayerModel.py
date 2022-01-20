@@ -67,3 +67,8 @@ class Player:
     @staticmethod
     def get_all_player():
         return _player_table.all()
+
+    @staticmethod
+    def update_player_rank(player_id, new_rank):
+        _player_table.update({'ranking': new_rank}, doc_ids=[player_id])
+        return True

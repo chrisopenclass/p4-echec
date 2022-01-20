@@ -25,7 +25,13 @@ class PlayerController:
                 sorted_player = sorted(list_of_player, key=lambda ele: ele["name"])
                 View.print_player(sorted_player)
             elif user_entry == 4:
-                pass
+                player = self.search_player_from_db()
+                View.new_player_rank()
+                new_rank = self.utils.check_multiple_number()
+                if Player.update_player_rank(player, new_rank):
+                    View.new_rank_set()
+                else:
+                    ErrorMessage.generic_error()
             elif user_entry == 5:
                 break
             else:
