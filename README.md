@@ -25,7 +25,7 @@ Nous avons tenté de suivre les principes de la programmation orientée objet et
   
 La conformité aux recommendations de style de la PEP8 a été validée par le paquet flake8 en version 4.0.1.  
 
-![](flake.png)  
+![](flake-report.png)  
 Pour produire votre propre rapport flake8, procédez ainsi :
 dans votre environnement virtuel sous le prompt bash python :  
 1. executer le script  
