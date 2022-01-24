@@ -10,15 +10,13 @@ exclude=
     .git,
     # no needs to go thru \env\site-packages\
     venv/,
+    Lib/,
+    Scripts/,
     # no python code files
-    data/,
     flake8_report/
-    test/
     README.md,
     requirements.txt,
     LICENSE,
     .flake8
-    .pylintrc,
-    .vscode/,
     # There's no value in checking cache directories
     __pycache__,
