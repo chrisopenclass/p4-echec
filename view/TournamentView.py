@@ -2,11 +2,12 @@ class TournamentView:
 
     @staticmethod
     def main_menu():
-        print("what did you want to do ? \n")
-        print("type 1 to create a new tournament \n")
-        print("type 2 to restore unfinished tournament \n")
-        print("type 3 to list all tournament \n")
-        print("type 4 to quit\n")
+        print("what did you want to do ? ")
+        print("type 1 to create a new tournament ")
+        print("type 2 to restore unfinished tournament ")
+        print("type 3 to list all tournament ")
+        print("type 4 to generate report for tournament")
+        print("type 5 to quit")
 
     @staticmethod
     def tournament_name():
@@ -39,6 +40,8 @@ class TournamentView:
     @staticmethod
     def tournament_not_exist():
         print("no tournament unfinished find please verify the given information")
+        print("maybe the tournament is finished ?")
+        input("press any key to continue")
 
     @staticmethod
     def round_menu_view():
@@ -67,3 +70,30 @@ class TournamentView:
                 print("this tournament is not finished yet\n")
             input("press any key to continue\n")
         print("all tournament as been printed")
+
+    @staticmethod
+    def print_round_and_match(round):
+        round_name = round.get("name")
+        match_list = round.get("match_list")
+        i = 0
+        print(f"{round_name}:\n")
+        print(f"all match for the {round_name} are:\n")
+        for matchs in match_list:
+            i += 1
+            print(f"match number {i} is :\n")
+            for match in matchs:
+                print(f"name: {match[0].get('name')} forename: {match[0].get('forename')}"
+                      f" rank: {match[0].get('ranking')}")
+            input("press any key to continue \n")
+
+    @staticmethod
+    def finished():
+        print("you can't enter any score the tournament is finished")
+
+    @staticmethod
+    def report_menu():
+        print("type 1 to list all player of the tournament sorted by rank")
+        print("type 2 to list all player sorted by alphabetical")
+        print("type 3 to see all round and match")
+        print("type 4 to go back")
+

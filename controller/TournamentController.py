@@ -1,9 +1,11 @@
 # view importation
 from view.TournamentView import TournamentView
 from view.error import ErrorMessage
+from view.PlayerView import View
 # model importation
 from model.TournamentModel import TournamentModel
 from model.RoundModel import RoundModel
+from model.PlayerModel import Player
 # controller importation
 from controller.PlayerController import PlayerController
 # custom utils importation
@@ -27,6 +29,7 @@ class TournamentController:
         tournament_data = TournamentModel(**tournament)
         tournament_data.save_to_db()
         tournament = TournamentModel.serialize(tournament_data)
+        self.tournament_id = TournamentModel(**tournament).get_tournament_id()
         return tournament
 
     def get_player_list(self):
@@ -64,7 +67,7 @@ class TournamentController:
         self.player_list = self.get_player_list()
         time = self.time_selection()
         description = self.get_tournament_description()
-        date = datetime.datetime.now().strftime("%d/%m/%Y")
+        date = None
         return {"name": name, "location": location, "player": self.player_list, "time": time,
                 "description": description, "date": date, "round_list": self.round}
 
@@ -107,6 +110,8 @@ class TournamentController:
             elif user_entry == 3:
                 self.print_all_tournament()
             elif user_entry == 4:
+                self.tournament_finished_to_find()
+            elif user_entry == 5:
                 break
             else:
                 self.message.error_menu()
@@ -138,6 +143,7 @@ class TournamentController:
                 round = RoundModel().generate_round(self.player_list, round_name)
                 self.round.append(round)
                 self.tournament.get("round_list").append(round)
+                self.tournament.update({"date": RoundModel.actual_date()})
                 TournamentModel.update_to_db(self.tournament, self.tournament_id)
             elif self.tournament.get("round_list"):
                 round_list = self.tournament.get("round_list")
@@ -157,14 +163,66 @@ class TournamentController:
             ErrorMessage.all_round_generated()
 
     def set_player_score(self):
-        list_of_round = self.tournament.get("round_list")
-        actual_round = list_of_round[-1]
-        if not actual_round.get("end_date"):
-            match_list = actual_round.get("match_list")
-            for match in match_list:
-                RoundModel().set_player_score(match)
-            date = RoundModel().actual_date()
-            actual_round.update({"end_date": date})
-            TournamentModel.update_to_db(self.tournament, self.tournament_id)
+        is_finished = self.tournament.get("finished")
+        if not is_finished == "true":
+            list_of_round = self.tournament.get("round_list")
+            actual_round = list_of_round[-1]
+            if not actual_round.get("end_date"):
+                match_list = actual_round.get("match_list")
+                for match in match_list:
+                    RoundModel().set_player_score(match)
+                date = RoundModel().actual_date()
+                actual_round.update({"end_date": date})
+                if actual_round.get("name") == "round 4":
+                    self.tournament.update({"finished": "true"})
+                TournamentModel.update_to_db(self.tournament, self.tournament_id)
+            else:
+                ErrorMessage().round_not_generated()
         else:
-            ErrorMessage().round_not_generated()
+            self.view.finished()
+
+    def tournament_finished_to_find(self):
+        self.view.tournament_name()
+        name = self.utils.check_string()
+        self.view.tournament_location()
+        location = self.utils.check_string()
+        tournament_info = {"name": name, "location": location}
+        tournament_to_search = TournamentModel(**tournament_info)
+        try:
+            tournament_exist = tournament_to_search.search_to_db_for_finished()
+            if not tournament_exist:
+                self.view.tournament_not_exist()
+            else:
+                restored_tournament = TournamentModel(**tournament_exist)
+                self.tournament = TournamentModel.serialize(restored_tournament)
+                self.tournament_id = TournamentModel(**tournament_exist).get_tournament_id()
+                self.generate_report()
+        except ValueError:
+            self.message.generic_error()
+
+    def generate_report(self):
+        while True:
+            self.view.report_menu()
+            user_choice = InputUtils().check_numbers()
+            if user_choice == 1:
+                player_to_retrieve = self.tournament.get("player")
+                list_of_players = []
+                for players in player_to_retrieve:
+                    list_of_players.append(Player.get_player(players))
+                sorted_players = sorted(list_of_players, key=lambda ele: ele["ranking"], reverse=True)
+                View.print_player(sorted_players)
+            elif user_choice == 2:
+                player_to_retrieve = self.tournament.get("player")
+                list_of_players = []
+                for players in player_to_retrieve:
+                    list_of_players.append(Player.get_player(players))
+                sorted_players = sorted(list_of_players, key=lambda ele: ele["name"])
+                View.print_player(sorted_players)
+            elif user_choice == 3:
+                list_of_all_round = self.tournament.get("round_list")
+                for round in list_of_all_round:
+                    self.view.print_round_and_match(round)
+            elif user_choice == 4:
+                break
+            else:
+                ErrorMessage.generic_error()

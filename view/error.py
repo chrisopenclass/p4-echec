@@ -74,4 +74,4 @@ class ErrorMessage:
 
     @staticmethod
     def round_not_generated():
-        print("you need to generate tournament first")
+        print("you need to generate a round first")

@@ -83,9 +83,10 @@
     },
     "tournament_table": {
         "1": {
-            "date": "20/01/2022",
+            "date": "24/01/2022",
             "description": "test",
-            "finished": "false",
+            "finished": "true",
+            "id": null,
             "location": "TEST",
             "name": "TEST",
             "player": [
@@ -100,7 +101,7 @@
             ],
             "round_list": [
                 {
-                    "end_date": "20/01/2022",
+                    "end_date": "24/01/2022",
                     "match_list": [
                         [
                             [
@@ -111,15 +112,14 @@
                                     "name": "LATAUPE",
                                     "opponent_history": [
                                         5,
-                                        3,
-                                        3,
-                                        3
+                                        4,
+                                        1
                                     ],
                                     "ranking": 300,
                                     "sex": "M",
-                                    "total_score": 1.5
+                                    "total_score": 2
                                 },
-                                0
+                                1
                             ],
                             [
                                 {
@@ -129,15 +129,14 @@
                                     "name": "AUFRAISE",
                                     "opponent_history": [
                                         2,
-                                        1,
-                                        4,
-                                        4
+                                        3,
+                                        6
                                     ],
                                     "ranking": 40,
                                     "sex": "F",
-                                    "total_score": 2.5
+                                    "total_score": 1
                                 },
-                                1
+                                0
                             ]
                         ],
                         [
@@ -149,15 +148,14 @@
                                     "name": "XU",
                                     "opponent_history": [
                                         3,
-                                        5,
                                         7,
-                                        7
+                                        2
                                     ],
                                     "ranking": 100,
                                     "sex": "F",
-                                    "total_score": 2.0
+                                    "total_score": 1
                                 },
-                                0.5
+                                1
                             ],
                             [
                                 {
@@ -167,15 +165,14 @@
                                     "name": "MOORE",
                                     "opponent_history": [
                                         1,
-                                        2,
-                                        2,
-                                        2
+                                        5,
+                                        8
                                     ],
                                     "ranking": 30,
                                     "sex": "M",
-                                    "total_score": 2.0
+                                    "total_score": 2
                                 },
-                                0.5
+                                0
                             ]
                         ],
                         [
@@ -187,13 +184,12 @@
                                     "name": "DINOZO",
                                     "opponent_history": [
                                         6,
-                                        7,
-                                        5,
-                                        5
+                                        2,
+                                        7
                                     ],
                                     "ranking": 70,
                                     "sex": "M",
-                                    "total_score": 3.0
+                                    "total_score": 3
                                 },
                                 1
                             ],
@@ -206,12 +202,11 @@
                                     "opponent_history": [
                                         4,
                                         8,
-                                        8,
-                                        8
+                                        5
                                     ],
                                     "ranking": 20,
                                     "sex": "F",
-                                    "total_score": 1.5
+                                    "total_score": 0
                                 },
                                 0
                             ]
@@ -225,13 +220,12 @@
                                     "name": "LEMOINE",
                                     "opponent_history": [
                                         8,
-                                        4,
                                         1,
-                                        1
+                                        4
                                     ],
                                     "ranking": 60,
                                     "sex": "F",
-                                    "total_score": 2.0
+                                    "total_score": 2
                                 },
                                 1
                             ],
@@ -244,22 +238,323 @@
                                     "opponent_history": [
                                         7,
                                         6,
-                                        6,
-                                        6
+                                        3
                                     ],
                                     "ranking": 2,
                                     "sex": "M",
-                                    "total_score": 1.5
+                                    "total_score": 1
                                 },
                                 0
                             ]
                         ]
                     ],
                     "name": "round 1",
-                    "starting_date": "20/01/2022"
+                    "starting_date": "24/01/2022"
                 },
                 {
-                    "end_date": "20/01/2022",
+                    "end_date": "24/01/2022",
+                    "match_list": [
+                        [
+                            [
+                                {
+                                    "born_date": "10/12/1985",
+                                    "forename": "RENE",
+                                    "id": 2,
+                                    "name": "LATAUPE",
+                                    "opponent_history": [
+                                        5,
+                                        4,
+                                        1
+                                    ],
+                                    "ranking": 300,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "22/09/1996",
+                                    "forename": "CHARLOTTE",
+                                    "id": 5,
+                                    "name": "AUFRAISE",
+                                    "opponent_history": [
+                                        2,
+                                        3,
+                                        6
+                                    ],
+                                    "ranking": 40,
+                                    "sex": "F",
+                                    "total_score": 1
+                                },
+                                0
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "10/07/1998",
+                                    "forename": "EDWIGE",
+                                    "id": 1,
+                                    "name": "XU",
+                                    "opponent_history": [
+                                        3,
+                                        7,
+                                        2
+                                    ],
+                                    "ranking": 100,
+                                    "sex": "F",
+                                    "total_score": 1
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "12/09/1991",
+                                    "forename": "ROGER",
+                                    "id": 3,
+                                    "name": "MOORE",
+                                    "opponent_history": [
+                                        1,
+                                        5,
+                                        8
+                                    ],
+                                    "ranking": 30,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                0
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "17/04/1965",
+                                    "forename": "ANTHONY",
+                                    "id": 4,
+                                    "name": "DINOZO",
+                                    "opponent_history": [
+                                        6,
+                                        2,
+                                        7
+                                    ],
+                                    "ranking": 70,
+                                    "sex": "M",
+                                    "total_score": 3
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "17/02/1974",
+                                    "forename": "MARIE",
+                                    "id": 6,
+                                    "name": "INGALS",
+                                    "opponent_history": [
+                                        4,
+                                        8,
+                                        5
+                                    ],
+                                    "ranking": 20,
+                                    "sex": "F",
+                                    "total_score": 0
+                                },
+                                0
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "02/02/1993",
+                                    "forename": "GERALDINE",
+                                    "id": 7,
+                                    "name": "LEMOINE",
+                                    "opponent_history": [
+                                        8,
+                                        1,
+                                        4
+                                    ],
+                                    "ranking": 60,
+                                    "sex": "F",
+                                    "total_score": 2
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "14/02/2001",
+                                    "forename": "JAMES",
+                                    "id": 8,
+                                    "name": "BOND",
+                                    "opponent_history": [
+                                        7,
+                                        6,
+                                        3
+                                    ],
+                                    "ranking": 2,
+                                    "sex": "M",
+                                    "total_score": 1
+                                },
+                                0
+                            ]
+                        ]
+                    ],
+                    "name": "round 1",
+                    "starting_date": "24/01/2022"
+                },
+                {
+                    "end_date": "24/01/2022",
+                    "match_list": [
+                        [
+                            [
+                                {
+                                    "born_date": "10/12/1985",
+                                    "forename": "RENE",
+                                    "id": 2,
+                                    "name": "LATAUPE",
+                                    "opponent_history": [
+                                        5,
+                                        4,
+                                        1
+                                    ],
+                                    "ranking": 300,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "born_date": "17/04/1965",
+                                    "forename": "ANTHONY",
+                                    "id": 4,
+                                    "name": "DINOZO",
+                                    "opponent_history": [
+                                        6,
+                                        2,
+                                        7
+                                    ],
+                                    "ranking": 70,
+                                    "sex": "M",
+                                    "total_score": 3
+                                },
+                                1
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "10/07/1998",
+                                    "forename": "EDWIGE",
+                                    "id": 1,
+                                    "name": "XU",
+                                    "opponent_history": [
+                                        3,
+                                        7,
+                                        2
+                                    ],
+                                    "ranking": 100,
+                                    "sex": "F",
+                                    "total_score": 1
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "born_date": "02/02/1993",
+                                    "forename": "GERALDINE",
+                                    "id": 7,
+                                    "name": "LEMOINE",
+                                    "opponent_history": [
+                                        8,
+                                        1,
+                                        4
+                                    ],
+                                    "ranking": 60,
+                                    "sex": "F",
+                                    "total_score": 2
+                                },
+                                1
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "22/09/1996",
+                                    "forename": "CHARLOTTE",
+                                    "id": 5,
+                                    "name": "AUFRAISE",
+                                    "opponent_history": [
+                                        2,
+                                        3,
+                                        6
+                                    ],
+                                    "ranking": 40,
+                                    "sex": "F",
+                                    "total_score": 1
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "born_date": "12/09/1991",
+                                    "forename": "ROGER",
+                                    "id": 3,
+                                    "name": "MOORE",
+                                    "opponent_history": [
+                                        1,
+                                        5,
+                                        8
+                                    ],
+                                    "ranking": 30,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                1
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "17/02/1974",
+                                    "forename": "MARIE",
+                                    "id": 6,
+                                    "name": "INGALS",
+                                    "opponent_history": [
+                                        4,
+                                        8,
+                                        5
+                                    ],
+                                    "ranking": 20,
+                                    "sex": "F",
+                                    "total_score": 0
+                                },
+                                0
+                            ],
+                            [
+                                {
+                                    "born_date": "14/02/2001",
+                                    "forename": "JAMES",
+                                    "id": 8,
+                                    "name": "BOND",
+                                    "opponent_history": [
+                                        7,
+                                        6,
+                                        3
+                                    ],
+                                    "ranking": 2,
+                                    "sex": "M",
+                                    "total_score": 1
+                                },
+                                1
+                            ]
+                        ]
+                    ],
+                    "name": "round 3",
+                    "starting_date": "24/01/2022"
+                },
+                {
+                    "end_date": "24/01/2022",
                     "match_list": [
                         [
                             [
@@ -270,13 +565,12 @@
                                     "name": "DINOZO",
                                     "opponent_history": [
                                         6,
-                                        7,
-                                        5,
-                                        5
+                                        2,
+                                        7
                                     ],
                                     "ranking": 70,
                                     "sex": "M",
-                                    "total_score": 3.0
+                                    "total_score": 3
                                 },
                                 1
                             ],
@@ -288,13 +582,84 @@
                                     "name": "LEMOINE",
                                     "opponent_history": [
                                         8,
-                                        4,
                                         1,
-                                        1
+                                        4
                                     ],
                                     "ranking": 60,
                                     "sex": "F",
-                                    "total_score": 2.0
+                                    "total_score": 2
+                                },
+                                0
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "10/12/1985",
+                                    "forename": "RENE",
+                                    "id": 2,
+                                    "name": "LATAUPE",
+                                    "opponent_history": [
+                                        5,
+                                        4,
+                                        1
+                                    ],
+                                    "ranking": 300,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "10/07/1998",
+                                    "forename": "EDWIGE",
+                                    "id": 1,
+                                    "name": "XU",
+                                    "opponent_history": [
+                                        3,
+                                        7,
+                                        2
+                                    ],
+                                    "ranking": 100,
+                                    "sex": "F",
+                                    "total_score": 1
+                                },
+                                0
+                            ]
+                        ],
+                        [
+                            [
+                                {
+                                    "born_date": "12/09/1991",
+                                    "forename": "ROGER",
+                                    "id": 3,
+                                    "name": "MOORE",
+                                    "opponent_history": [
+                                        1,
+                                        5,
+                                        8
+                                    ],
+                                    "ranking": 30,
+                                    "sex": "M",
+                                    "total_score": 2
+                                },
+                                1
+                            ],
+                            [
+                                {
+                                    "born_date": "14/02/2001",
+                                    "forename": "JAMES",
+                                    "id": 8,
+                                    "name": "BOND",
+                                    "opponent_history": [
+                                        7,
+                                        6,
+                                        3
+                                    ],
+                                    "ranking": 2,
+                                    "sex": "M",
+                                    "total_score": 1
                                 },
                                 0
                             ]
@@ -308,74 +673,15 @@
                                     "name": "AUFRAISE",
                                     "opponent_history": [
                                         2,
-                                        1,
-                                        4,
-                                        4
+                                        3,
+                                        6
                                     ],
                                     "ranking": 40,
                                     "sex": "F",
-                                    "total_score": 2.5
+                                    "total_score": 1
                                 },
-                                0.5
+                                1
                             ],
-                            [
-                                {
-                                    "born_date": "10/07/1998",
-                                    "forename": "EDWIGE",
-                                    "id": 1,
-                                    "name": "XU",
-                                    "opponent_history": [
-                                        3,
-                                        5,
-                                        7,
-                                        7
-                                    ],
-                                    "ranking": 100,
-                                    "sex": "F",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "12/09/1991",
-                                    "forename": "ROGER",
-                                    "id": 3,
-                                    "name": "MOORE",
-                                    "opponent_history": [
-                                        1,
-                                        2,
-                                        2,
-                                        2
-                                    ],
-                                    "ranking": 30,
-                                    "sex": "M",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "10/12/1985",
-                                    "forename": "RENE",
-                                    "id": 2,
-                                    "name": "LATAUPE",
-                                    "opponent_history": [
-                                        5,
-                                        3,
-                                        3,
-                                        3
-                                    ],
-                                    "ranking": 300,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
                             [
                                 {
                                     "born_date": "17/02/1974",
@@ -385,358 +691,21 @@
                                     "opponent_history": [
                                         4,
                                         8,
-                                        8,
-                                        8
-                                    ],
-                                    "ranking": 20,
-                                    "sex": "F",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "14/02/2001",
-                                    "forename": "JAMES",
-                                    "id": 8,
-                                    "name": "BOND",
-                                    "opponent_history": [
-                                        7,
-                                        6,
-                                        6,
-                                        6
-                                    ],
-                                    "ranking": 2,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ]
-                        ]
-                    ],
-                    "name": "round 2",
-                    "starting_date": "20/01/2022"
-                },
-                {
-                    "end_date": "20/01/2022",
-                    "match_list": [
-                        [
-                            [
-                                {
-                                    "born_date": "17/04/1965",
-                                    "forename": "ANTHONY",
-                                    "id": 4,
-                                    "name": "DINOZO",
-                                    "opponent_history": [
-                                        6,
-                                        7,
-                                        5,
                                         5
                                     ],
-                                    "ranking": 70,
-                                    "sex": "M",
-                                    "total_score": 3.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "22/09/1996",
-                                    "forename": "CHARLOTTE",
-                                    "id": 5,
-                                    "name": "AUFRAISE",
-                                    "opponent_history": [
-                                        2,
-                                        1,
-                                        4,
-                                        4
-                                    ],
-                                    "ranking": 40,
-                                    "sex": "F",
-                                    "total_score": 2.5
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "10/07/1998",
-                                    "forename": "EDWIGE",
-                                    "id": 1,
-                                    "name": "XU",
-                                    "opponent_history": [
-                                        3,
-                                        5,
-                                        7,
-                                        7
-                                    ],
-                                    "ranking": 100,
-                                    "sex": "F",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "02/02/1993",
-                                    "forename": "GERALDINE",
-                                    "id": 7,
-                                    "name": "LEMOINE",
-                                    "opponent_history": [
-                                        8,
-                                        4,
-                                        1,
-                                        1
-                                    ],
-                                    "ranking": 60,
-                                    "sex": "F",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "12/09/1991",
-                                    "forename": "ROGER",
-                                    "id": 3,
-                                    "name": "MOORE",
-                                    "opponent_history": [
-                                        1,
-                                        2,
-                                        2,
-                                        2
-                                    ],
-                                    "ranking": 30,
-                                    "sex": "M",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "10/12/1985",
-                                    "forename": "RENE",
-                                    "id": 2,
-                                    "name": "LATAUPE",
-                                    "opponent_history": [
-                                        5,
-                                        3,
-                                        3,
-                                        3
-                                    ],
-                                    "ranking": 300,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "17/02/1974",
-                                    "forename": "MARIE",
-                                    "id": 6,
-                                    "name": "INGALS",
-                                    "opponent_history": [
-                                        4,
-                                        8,
-                                        8,
-                                        8
-                                    ],
                                     "ranking": 20,
                                     "sex": "F",
-                                    "total_score": 1.5
+                                    "total_score": 0
                                 },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "14/02/2001",
-                                    "forename": "JAMES",
-                                    "id": 8,
-                                    "name": "BOND",
-                                    "opponent_history": [
-                                        7,
-                                        6,
-                                        6,
-                                        6
-                                    ],
-                                    "ranking": 2,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ]
-                        ]
-                    ],
-                    "name": "round 3",
-                    "starting_date": "20/01/2022"
-                },
-                {
-                    "end_date": "20/01/2022",
-                    "match_list": [
-                        [
-                            [
-                                {
-                                    "born_date": "17/04/1965",
-                                    "forename": "ANTHONY",
-                                    "id": 4,
-                                    "name": "DINOZO",
-                                    "opponent_history": [
-                                        6,
-                                        7,
-                                        5,
-                                        5
-                                    ],
-                                    "ranking": 70,
-                                    "sex": "M",
-                                    "total_score": 3.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "22/09/1996",
-                                    "forename": "CHARLOTTE",
-                                    "id": 5,
-                                    "name": "AUFRAISE",
-                                    "opponent_history": [
-                                        2,
-                                        1,
-                                        4,
-                                        4
-                                    ],
-                                    "ranking": 40,
-                                    "sex": "F",
-                                    "total_score": 2.5
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "10/07/1998",
-                                    "forename": "EDWIGE",
-                                    "id": 1,
-                                    "name": "XU",
-                                    "opponent_history": [
-                                        3,
-                                        5,
-                                        7,
-                                        7
-                                    ],
-                                    "ranking": 100,
-                                    "sex": "F",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "02/02/1993",
-                                    "forename": "GERALDINE",
-                                    "id": 7,
-                                    "name": "LEMOINE",
-                                    "opponent_history": [
-                                        8,
-                                        4,
-                                        1,
-                                        1
-                                    ],
-                                    "ranking": 60,
-                                    "sex": "F",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "12/09/1991",
-                                    "forename": "ROGER",
-                                    "id": 3,
-                                    "name": "MOORE",
-                                    "opponent_history": [
-                                        1,
-                                        2,
-                                        2,
-                                        2
-                                    ],
-                                    "ranking": 30,
-                                    "sex": "M",
-                                    "total_score": 2.0
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "10/12/1985",
-                                    "forename": "RENE",
-                                    "id": 2,
-                                    "name": "LATAUPE",
-                                    "opponent_history": [
-                                        5,
-                                        3,
-                                        3,
-                                        3
-                                    ],
-                                    "ranking": 300,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ]
-                        ],
-                        [
-                            [
-                                {
-                                    "born_date": "17/02/1974",
-                                    "forename": "MARIE",
-                                    "id": 6,
-                                    "name": "INGALS",
-                                    "opponent_history": [
-                                        4,
-                                        8,
-                                        8,
-                                        8
-                                    ],
-                                    "ranking": 20,
-                                    "sex": "F",
-                                    "total_score": 1.5
-                                },
-                                0.5
-                            ],
-                            [
-                                {
-                                    "born_date": "14/02/2001",
-                                    "forename": "JAMES",
-                                    "id": 8,
-                                    "name": "BOND",
-                                    "opponent_history": [
-                                        7,
-                                        6,
-                                        6,
-                                        6
-                                    ],
-                                    "ranking": 2,
-                                    "sex": "M",
-                                    "total_score": 1.5
-                                },
-                                0.5
+                                0
                             ]
                         ]
                     ],
                     "name": "round 4",
-                    "starting_date": "20/01/2022"
+                    "starting_date": "24/01/2022"
                 }
             ],
-            "time": "quick stroke",
+            "time": "blitz",
             "turn": 4
         }
     }

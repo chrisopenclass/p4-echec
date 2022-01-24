@@ -11,7 +11,7 @@ class TournamentModel:
     def __init__(
             self, name=None, location=None, player=None, time=None,
             description=None, date=None, round_list=None,
-            finished="false", turn=4):
+            finished="false", turn=4, id=None):
         self.name = name
         self.location = location
         self.player = player
@@ -21,6 +21,7 @@ class TournamentModel:
         self.round_list = round_list
         self.finished = finished
         self.turn = turn
+        self.id = id
 
     def serialize(self):
         return {"name": self.name,
@@ -31,11 +32,24 @@ class TournamentModel:
                 "time": self.time,
                 "description": self.description,
                 "finished": self.finished,
-                "round_list": self.round_list
+                "round_list": self.round_list,
+                "id": self.id
                 }
 
+    def update_id(self):
+        tournament_id = TournamentModel.get_tournament_id(self)
+        _tournament_table.update({'id': tournament_id}, doc_ids=[tournament_id])
+
     def save_to_db(self):
-        _tournament_table.insert(self.serialize())
+        try:
+            saving = _tournament_table.insert(self.serialize())
+            if saving:
+                TournamentModel.update_id(self)
+                return True
+            else:
+                return False
+        except ValueError:
+            ErrorMessage.generic_error()
 
     def search_to_db(self):
         tournament = Query()
@@ -70,3 +84,16 @@ class TournamentModel:
     @staticmethod
     def extract_all_tournament():
         return _tournament_table.all()
+
+    def search_to_db_for_finished(self):
+        tournament = Query()
+        try:
+            search_result = _tournament_table.get((tournament.name == self.name) &
+                                                  (tournament.location == self.location) &
+                                                  (tournament.finished == "true"))
+            if not search_result:
+                return False
+            else:
+                return search_result
+        except ValueError:
+            ErrorMessage().generic_error()
