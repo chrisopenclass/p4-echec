@@ -97,3 +97,8 @@ class TournamentView:
         print("type 3 to see all round and match")
         print("type 4 to go back")
 
+    @staticmethod
+    def print_player_when_added(player):
+        name = player.get("name")
+        forename = player.get("forename")
+        print(f"the player{name} {forename} is added to the tournament \n")
