@@ -10,8 +10,6 @@ from model.PlayerModel import Player
 from controller.PlayerController import PlayerController
 # custom utils importation
 from utils.utils import InputUtils
-# python module importation
-import datetime
 
 
 class TournamentController:
@@ -38,6 +36,8 @@ class TournamentController:
         while index < 8:
             player_id = PlayerController().search_player_from_db()
             self.player_list.append(player_id)
+            player = Player.get_player(player_id)
+            self.view.print_player_when_added(player)
             index += 1
         return self.player_list
 
