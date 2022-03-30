@@ -7,7 +7,7 @@ il est conseillé sous le prompt bash python (ici cmd Anaconda3 sous Windows 10)
 
 1. de cloner l'ensemble du répertoire github dans un répertoire local dédié.  
         ``` https://github.com/chrisopenclass/p4-echec
-2. se déplacer dans le sous répertoire de travail ocr-p4v2  
+2. se déplacer dans le sous répertoire de travail
         ``` cd p4-echec
 3. de créer un environnement virtuel python, env  
         ``` python -m venv env  
